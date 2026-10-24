@@ -34,8 +34,20 @@ visual quality or audit all browser/accessibility behavior.
 
 ## Maintain
 
-- `index.html`: primary story, three flagship work rows, supporting systems,
-  career progression, toolkit, writing, recognition, education, contact.
+- `index.html`: visual field guide with an original inline SVG commerce-decision
+  map, three visually distinct flagship cases, supporting systems, career
+  progression, toolkit, writing, recognition, education, and contact. The audience
+  two-tower, customer-value signal flow, and risk/explanation drawings are explicitly
+  illustrative—not product screenshots, embedding plots, real customer records,
+  or measured performance distributions. Every drawing has a scalable viewBox,
+  accessible title/description, and a visible scope caption.
+- The catalog-enrichment before/after graphic prints the verified **2 min → 0.3 sec
+  per item** endpoints; it does not encode duration through bar length, use a
+  fabricated latency curve, or imply a new benchmark. Metric copy and qualifiers
+  remain unchanged; native `details` retain technical depth without JavaScript.
+- `tests/test_visual_field_guide.py`: structural regressions for the original
+  diagrams, distinct cases, accessible SVG names, honest timing graphic, and
+  larger type. These supplement—not replace—actual mobile/desktop/print review.
 - `resume.html`: clean, phone-free print résumé. Keep its claims and dates in sync
   with the home page, preserving comparisons and attribution qualifiers.
 - `static/css/style.css`: shared warm-paper/charcoal theme, responsive and print

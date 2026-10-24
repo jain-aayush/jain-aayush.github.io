@@ -30,42 +30,105 @@
   </header>
   <main id="main" tabindex="-1" class="wrap">
     <section class="hero" aria-labelledby="intro-heading">
-      <p class="eyebrow">Applied science / Production ML</p>
-      <h1 id="intro-heading">Machine learning for<br class="desktop-break"> better commerce decisions.</h1>
+      <p class="eyebrow">A field guide to applied science / Production ML</p>
+      <div class="hero-layout">
+        <div class="hero-copy"><h1 id="intro-heading">Machine learning for <em>better commerce</em> decisions.</h1><p class="hero-deck">From who to reach to what happens at checkout.</p><a class="text-link" href="#work">Explore selected work <span aria-hidden="true">↘</span></a></div>
+        <figure class="hero-visual">
+          <svg viewBox="0 0 480 330" role="img" aria-labelledby="commerce-title commerce-desc">
+            <title id="commerce-title">Three decisions, one commerce journey</title>
+            <desc id="commerce-desc">Illustrative map of Aayush’s work: audience selection, customer lifetime value, and checkout risk. Connecting paths describe related problem areas, not a measured customer funnel or a deployed system architecture.</desc>
+            <path class="journey-line" d="M65 75 C65 180 235 95 235 185 S410 170 410 260"/>
+            <g class="journey-node"><rect x="18" y="22" width="280" height="76" rx="12"/><circle cx="48" cy="60" r="15"/><path d="M42 59 h12 M48 53 v12"/><text x="77" y="55" class="svg-kicker">01 / REACH</text><text x="77" y="79">Audience selection</text></g>
+            <g class="journey-node"><rect x="172" y="126" width="290" height="76" rx="12"/><path d="M197 178 v-25 h9 v25 M211 178 v-35 h9 v35"/><text x="239" y="159" class="svg-kicker">02 / VALUE</text><text x="239" y="183">Customer value</text></g>
+            <g class="journey-node focal"><rect x="56" y="234" width="383" height="76" rx="12"/><path d="M86 251 l14 5 v12 q0 12 -14 20 q-14 -8 -14 -20 v-12 z M80 269 l5 5 9 -11"/><text x="120" y="266" class="svg-kicker">03 / CHECKOUT</text><text x="120" y="290">Checkout risk + explanations</text></g>
+          </svg>
+          <figcaption>Illustrative problem map · not a product interface</figcaption>
+        </figure>
+      </div>
       <div class="hero-bottom">
         <p class="intro">I build production ML systems for audience selection, customer lifetime value, and checkout risk. At GoKwik, I lead the customer-intelligence data science roadmap across retargeting and checkout teams—connecting modeling, experimentation, and production engineering to merchant outcomes.</p>
-        <div class="hero-aside"><p>Senior Applied Scientist – Lead<br><strong>GoKwik</strong> · Bengaluru</p><a class="text-link" href="#work">Explore selected work <span aria-hidden="true">↓</span></a></div>
+        <div class="hero-aside"><p>Senior Applied Scientist – Lead<br><strong>GoKwik</strong> · Bengaluru</p><span class="availability-note">Modeling → Experimentation → Production</span></div>
       </div>
     </section>
     <section id="work" class="section" aria-labelledby="work-heading">
       <div class="section-heading"><h2 id="work-heading">Selected work</h2><p>From modeling choices to merchant outcomes.</p></div>
-      <article class="work-row">
+      <article class="work-row" data-case="audience">
         <div class="work-index" aria-hidden="true">01</div>
         <div class="work-body"><p class="eyebrow">Audience selection / Representation learning</p><h3>Finding higher-value audiences</h3><p>A two-tower system for WhatsApp retargeting, learning from 350M+ user-brand interactions to select audiences beyond a learning-to-rank baseline.</p>
           <details><summary>Model &amp; measurement</summary><div class="detail-body"><p>Trained with in-batch negatives. Improved top-quartile ROAS lift by 13% over an XGBoost learning-to-rank baseline.</p><p>Selected audiences averaged 2.5× last-click ROAS, 30% above brands’ current targeting. These are separate reported measures, not causal incrementality; last-click attribution does not establish incremental lift.</p></div></details>
         </div>
-        <aside class="work-outcome" aria-label="Audience result"><p class="metric">13<span>%</span></p><p>improvement in top-quartile ROAS lift</p><p class="metric-note">vs. XGBoost ranking baseline</p></aside>
+        <aside class="work-outcome" aria-label="Audience result">
+          <figure class="case-visual">
+            <svg viewBox="0 0 440 260" role="img" aria-labelledby="audience-title audience-desc">
+              <title id="audience-title">Two towers learn a user–brand match</title>
+              <desc id="audience-desc">Illustrative two-tower concept. User and brand representations meet at a matching step to support audience selection. This is not an embedding plot, a model architecture specification, or measured similarity data.</desc>
+              <text x="30" y="33" class="svg-kicker">USER SIDE</text><text x="280" y="33" class="svg-kicker">BRAND SIDE</text>
+              <g class="tower"><rect x="26" y="55" width="136" height="80" rx="8"/><path d="M26 79 h136 M26 106 h136"/><text x="94" y="102" text-anchor="middle">User tower</text><rect x="278" y="55" width="136" height="80" rx="8"/><path d="M278 79 h136 M278 106 h136"/><text x="346" y="102" text-anchor="middle">Brand tower</text></g>
+              <path class="diagram-path" d="M94 135 C94 176 154 183 174 183 M346 135 C346 176 286 183 266 183"/>
+              <rect class="diagram-focus" x="174" y="158" width="92" height="50" rx="25"/><text x="220" y="190" text-anchor="middle">Match</text>
+              <text x="220" y="242" text-anchor="middle" class="svg-small">Learned from user–brand interactions</text>
+            </svg><figcaption>Illustrative mechanism · no plotted embeddings</figcaption>
+          </figure>
+          <div class="result-strip"><p class="metric">13<span>%</span></p><div><p>improvement in top-quartile ROAS lift</p><p class="metric-note">vs. XGBoost ranking baseline</p></div></div>
+        </aside>
       </article>
-      <article class="work-row">
+      <article class="work-row" data-case="value">
         <div class="work-index" aria-hidden="true">02</div>
         <div class="work-body"><p class="eyebrow">Customer lifetime value / Activation</p><h3>Turning customer value into targeting signals</h3><p>Behavioral and transactional features turn customer lifetime value into a production signal for Meta targeting across 500 brands.</p>
           <details><summary>Scale &amp; business context</summary><div class="detail-body"><p>The system delivers 10M+ weekly predictions and supports ₹500 crore+ monthly GMV, enabling a 5% portfolio ROAS uplift on Meta.</p><p>GMV supported—not generated by the model. The volume describes the merchant business served by the system.</p></div></details>
         </div>
-        <aside class="work-outcome" aria-label="Customer value scale"><p class="metric">10M<span>+</span></p><p>customer-value predictions weekly</p><p class="metric-note">across 500 brands</p></aside>
+        <aside class="work-outcome" aria-label="Customer value scale">
+          <figure class="case-visual">
+            <svg viewBox="0 0 440 235" role="img" aria-labelledby="value-title value-desc">
+              <title id="value-title">Customer value becomes an activation signal</title>
+              <desc id="value-desc">Illustrative flow from behavioral and transactional features through customer lifetime value prediction to Meta targeting. No customer scores or performance distribution are represented.</desc>
+              <g class="feature-sheet"><rect x="24" y="31" width="172" height="52" rx="6"/><text x="110" y="64" text-anchor="middle">Behavioral</text><rect x="24" y="98" width="172" height="52" rx="6"/><text x="110" y="131" text-anchor="middle">Transactional</text></g>
+              <path class="diagram-path" d="M196 57 C239 57 210 91 249 91 M196 124 C239 124 210 91 249 91"/>
+              <rect class="diagram-focus" x="249" y="56" width="165" height="70" rx="10"/><text x="331" y="85" text-anchor="middle">Customer value</text><text x="331" y="108" text-anchor="middle" class="svg-small">prediction</text>
+              <path class="diagram-path" d="M331 126 v33 H110"/><circle class="signal-dot" cx="110" cy="159" r="5"/>
+              <text x="24" y="201">Activate in Meta targeting</text>
+            </svg><figcaption>Illustrative signal flow · not customer-level data</figcaption>
+          </figure>
+          <div class="result-strip"><p class="metric">10M<span>+</span></p><div><p>customer-value predictions weekly</p><p class="metric-note">across 500 brands</p></div></div>
+        </aside>
       </article>
-      <article class="work-row">
+      <article class="work-row" data-case="risk">
         <div class="work-index" aria-hidden="true">03</div>
         <div class="work-body"><p class="eyebrow">Checkout risk / Explainable ML</p><h3>Making checkout risk actionable</h3><p>Gradient-boosted return-to-origin (RTO) prediction, paired with explanations that make risk signals usable in real-time and batch checkout decisions.</p>
           <details><summary>Evaluation &amp; production</summary><div class="detail-body"><p>Improved RTO precision by 21% at 10% recall versus the previous production model. The core risk system serves 10,000+ brands.</p><p>SHAP-based XGBoost explanations handle 500K+ daily requests, with &lt;20ms p95 latency on the real-time path.</p></div></details>
         </div>
-        <aside class="work-outcome" aria-label="Risk result"><p class="metric">21<span>%</span></p><p>improvement in RTO precision</p><p class="metric-note">at 10% recall · vs. prior production</p></aside>
+        <aside class="work-outcome" aria-label="Risk result">
+          <figure class="case-visual">
+            <svg viewBox="0 0 440 270" role="img" aria-labelledby="risk-title risk-desc">
+              <title id="risk-title">Pair risk prediction with an explanation</title>
+              <desc id="risk-desc">Illustrative relationship between XGBoost RTO prediction and SHAP explanations, used in real-time and batch decisions. No fabricated risk score, feature importance, or individual checkout is shown.</desc>
+              <path class="shield-outline" d="M98 28 l62 22 v60 q0 56 -62 86 q-62 -30 -62 -86 V50 z"/>
+              <text x="98" y="91" text-anchor="middle">RTO</text><text x="98" y="117" text-anchor="middle">prediction</text><text x="98" y="146" text-anchor="middle" class="svg-small">XGBoost</text>
+              <path class="diagram-path" d="M160 103 H203"/>
+              <rect class="explanation-sheet" x="203" y="49" width="209" height="123" rx="8"/><text x="223" y="82">Why this risk?</text><path class="explanation-rule" d="M223 98 h169 M223 106 h169"/><text x="223" y="136" class="svg-small">SHAP explanations</text>
+              <path class="diagram-path" d="M98 196 v24 H347 V172"/>
+              <text x="30" y="253" class="svg-small">Real-time + Batch decisions</text>
+            </svg><figcaption>Illustrative mechanism · no simulated risk scores</figcaption>
+          </figure>
+          <div class="result-strip"><p class="metric">21<span>%</span></p><div><p>improvement in RTO precision</p><p class="metric-note">at 10% recall · vs. prior production</p></div></div>
+        </aside>
       </article>
       <p class="work-caption">Selected production work at GoKwik. Metrics retain their evaluation, scale, and attribution context.</p>
     </section>
     <section class="section split-section" aria-labelledby="systems-heading">
       <div class="section-label"><p class="eyebrow">Beyond the model</p><h2 id="systems-heading">The systems<br> around the science.</h2></div>
       <div class="support-list">
-        <article><h3>Product intelligence at catalog scale</h3><p>Fine-tuned Qwen3 30B MoE with vLLM for attribute extraction across 3M+ products: from 2 minutes to 0.3 seconds per item, with a 60% cost reduction. LLM-extracted attributes and content-based product representations support merchant similarity, customer attribute profiling, and cold-start personalization for 500+ brands.</p></article>
+        <article><h3>Product intelligence at catalog scale</h3>
+          <figure class="enrichment-visual">
+            <svg viewBox="0 0 620 175" role="img" aria-labelledby="enrichment-title enrichment-desc">
+              <title id="enrichment-title">Attribute extraction: 2 minutes to 0.3 seconds per item</title>
+              <desc id="enrichment-desc">Verified before and after durations, printed as numbers rather than proportionally encoded shapes. Fine-tuned Qwen3 30B MoE with vLLM across 3M+ products; 60% cost reduction. This is not a distribution or latency trace.</desc>
+              <text x="26" y="36" class="svg-small">Before</text><text x="26" y="102" class="comparison-before">2 min</text><text x="26" y="140" class="svg-small">per item</text>
+              <path class="comparison-arrow" d="M242 87 H325 m-12 -12 12 12 -12 12"/>
+              <text x="365" y="36" class="svg-small">After</text><text x="365" y="102" class="comparison-after">0.3 sec</text><text x="365" y="140" class="svg-small">per item</text>
+            </svg><figcaption>Reported endpoints · not a distribution or a to-scale time plot</figcaption>
+          </figure>
+          <p>Fine-tuned Qwen3 30B MoE with vLLM for attribute extraction across 3M+ products: from 2 minutes to 0.3 seconds per item, with a 60% cost reduction. LLM-extracted attributes and content-based product representations support merchant similarity, customer attribute profiling, and cold-start personalization for 500+ brands.</p></article>
         <article><h3>Shared features, reliable foundations</h3><p>PySpark and Dataproc pipelines across 500M+ transactions and 100M+ customers produce discount-affinity, spending-power, and risk-propensity signals for CLV, retargeting, and checkout.</p></article>
         <article><h3>Monitoring beyond deployment</h3><p>GCP Cloud Scheduler, BigQuery, and Cloud Run monitor drift, fill rates, and prediction–outcome alignment across 10,000+ brands.</p></article>
         <article><h3>Different segments, different treatments</h3><p>Segment-tailored WhatsApp abandoned-cart and checkout treatments improved conversion by 3 percentage points and prepaid share by 7 percentage points.</p></article>
